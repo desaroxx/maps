@@ -76,6 +76,20 @@ namespace maps {
           let polyline: google.maps.Polyline = maps.polyline.Factory.createPolyline(path)
           this.polyline = polyline;
           this.PolylineManager.addPolyline(polyline);
+          google.maps.event.addListener(polyline, "mouseover", (event: google.maps.MouseEvent) => {
+              let position: google.maps.LatLng = event.latLng;
+              let marker: google.maps.Marker = maps.marker.Factory.createPolylineHoverMarker(position);
+              let map = this.MapManager.getMap()
+              marker.setMap(map);
+
+              let mouseMoveListener = google.maps.event.addListener(polyline, "mousemove", (event: google.maps.MouseEvent) => {
+                  marker.setPosition(event.latLng);
+              });
+              google.maps.event.addListener(polyline, "mouseout", (event: google.maps.MouseEvent) => {
+                  marker.setMap(null);
+              });
+
+          });
       }
 
       private static printPositions() {

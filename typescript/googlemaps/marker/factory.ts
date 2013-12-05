@@ -15,5 +15,15 @@ namespace maps.marker {
             };
             return new google.maps.Marker(extendedMarkerOptions);
         }
+
+        public static createPolylineHoverMarker(position: google.maps.LatLng): google.maps.Marker {
+            return new google.maps.Marker({
+                position: position,
+                icon: {
+                    path: google.maps.SymbolPath.CIRCLE,
+                    scale: 4
+                },
+            });
+        }
     }
 }

@@ -50,12 +50,25 @@ var maps;
             return this.overlay;
         };
         Main.addPointToPolyline = function (point) {
+            var _this = this;
             var path = this.polyline.getPath();
             path.push(point);
             this.polyline.setMap(null);
             var polyline = maps.polyline.Factory.createPolyline(path);
             this.polyline = polyline;
             this.PolylineManager.addPolyline(polyline);
+            google.maps.event.addListener(polyline, "mouseover", function (event) {
+                var position = event.latLng;
+                var marker = maps.marker.Factory.createPolylineHoverMarker(position);
+                var map = _this.MapManager.getMap();
+                marker.setMap(map);
+                var mouseMoveListener = google.maps.event.addListener(polyline, "mousemove", function (event) {
+                    marker.setPosition(event.latLng);
+                });
+                google.maps.event.addListener(polyline, "mouseout", function (event) {
+                    marker.setMap(null);
+                });
+            });
         };
         Main.printPositions = function () {
             console.log("[App] printPositions()");

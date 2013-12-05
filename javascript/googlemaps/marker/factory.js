@@ -18,6 +18,15 @@ var maps;
                 };
                 return new google.maps.Marker(extendedMarkerOptions);
             };
+            Factory.createPolylineHoverMarker = function (position) {
+                return new google.maps.Marker({
+                    position: position,
+                    icon: {
+                        path: google.maps.SymbolPath.CIRCLE,
+                        scale: 4
+                    },
+                });
+            };
             return Factory;
         })();
         marker.Factory = Factory;
