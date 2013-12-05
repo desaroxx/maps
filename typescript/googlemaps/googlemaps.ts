@@ -85,8 +85,11 @@ namespace maps {
               let mouseMoveListener = google.maps.event.addListener(polyline, "mousemove", (event: google.maps.MouseEvent) => {
                   marker.setPosition(event.latLng);
               });
-              google.maps.event.addListener(polyline, "mouseout", (event: google.maps.MouseEvent) => {
+              let mouseOutLisener = google.maps.event.addListener(polyline, "mouseout", (event: google.maps.MouseEvent) => {
                   marker.setMap(null);
+                  // remove listeners
+                  google.maps.event.removeListener(mouseMoveListener);
+                  google.maps.event.removeListener(mouseOutLisener);
               });
 
           });

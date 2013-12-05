@@ -65,8 +65,10 @@ var maps;
                 var mouseMoveListener = google.maps.event.addListener(polyline, "mousemove", function (event) {
                     marker.setPosition(event.latLng);
                 });
-                google.maps.event.addListener(polyline, "mouseout", function (event) {
+                var mouseOutLisener = google.maps.event.addListener(polyline, "mouseout", function (event) {
                     marker.setMap(null);
+                    google.maps.event.removeListener(mouseMoveListener);
+                    google.maps.event.removeListener(mouseOutLisener);
                 });
             });
         };
