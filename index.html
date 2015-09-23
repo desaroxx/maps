@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div id="map"></div>
+    <div id="panel">
+    	<button onclick="App.deleteMarkers()">Delete all</button>
+    	<button onclick="App.printPositions()">Print all</button>
+    </div>
+    
+    <script src="app.js" />
+
+    </script>
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHnIQ4g3XNU5nGKI29CvMowFz28QE-Xgs&callback=App.initMap">
+	</script>
+</body>
+
+</html>
