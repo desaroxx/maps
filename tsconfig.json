@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "outDir": "./javascript"
+    },
+    "filesGlob": [
+        "./typings/*/**/.ts",
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "./typescript/MapManager.ts",
+        "./typescript/app.ts",
+        "./typings/googlemaps/google.maps.d.ts",
+        "./typings/tsd.d.ts",
+        "./typings/underscore/underscore.d.ts"
+    ]
+}

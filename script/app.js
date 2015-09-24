@@ -6,7 +6,7 @@
 			lat: 47.377291,
 			lng: 8.540079
 		},
-		bellvue: { 
+		bellvue: {
 			lat: 47.366832,
 			lng: 8.545105
 		},
@@ -124,6 +124,6 @@
 	window.App = {
 		initMap: initMap,
 		deleteMarkers: deleteMarkers,
-		printPositions: printPositions	
+		printPositions: printPositions
 	};
 })(window);
