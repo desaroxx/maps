@@ -3,28 +3,35 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="style/style.css">
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+
+    <script src="javascript/planner/planner.js"></script>
+    <script src="javascript/planner/directive.js"></script>
+    <script src="javascript/planner/controller.js"></script>
+    <script src="javascript/planner/map/directive.js"></script>
+    <script src="javascript/planner/map/controller.js"></script>
+    <script src="javascript/googlemaps/googlemaps.js"></script>
+    <script src="javascript/googlemaps/map/factory.js"></script>
+    <script src="javascript/googlemaps/map/manager.js"></script>
+    <script src="javascript/googlemaps/marker/factory.js"></script>
+    <script src="javascript/googlemaps/marker/manager.js"></script>
+    <script src="javascript/googlemaps/polyline/factory.js"></script>
+    <script src="javascript/googlemaps/polyline/manager.js"></script>
+    <script src="javascript/googlemaps/DrawingTools.js"></script>
+    <script src="javascript/app.js"></script>
+	<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHnIQ4g3XNU5nGKI29CvMowFz28QE-Xgs&libraries=drawing&callback=app.initialize">
+	</script>
+
 </head>
 
-<body>
-    <div id="map"></div>
-    <div id="panel">
-    	<button onclick="App.deleteMarkers()">Delete all</button>
-    	<button onclick="App.printPositions()">Print all</button>
-    </div>
+<body planner>
 
-    <script src="bower_components/underscore/underscore.js"></script>
-
-    <script src="javascript/app.js"></script>
-    <script src="javascript/map/factory.js"></script>
-    <script src="javascript/map/manager.js"></script>
-    <script src="javascript/marker/factory.js"></script>
-    <script src="javascript/marker/manager.js"></script>
-    <script src="javascript/polyline/factory.js"></script>
-    <script src="javascript/polyline/manager.js"></script>
-    <script src="javascript/DrawingTools.js"></script>
-	<script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCHnIQ4g3XNU5nGKI29CvMowFz28QE-Xgs&libraries=drawing&callback=App.initialize">
-	</script>
 </body>
 
 </html>
