@@ -4,6 +4,7 @@ namespace planner {
         public printAllTitle: string = "Print All";
 
         constructor() {}
+        
     }
 
     angular.module("planner").controller("plannerCtrl", PlannerController);

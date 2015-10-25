@@ -3,9 +3,10 @@ namespace planner {
         public restrict = "A";
         public template = `
             <planner-map></planner-map>
+            <drawing-tools></drawing-tools>
             <div id="panel">
-                <button onclick="App.deleteMarkers()">{{plannerCtrl.deleteTitle}}</button>
-                <button onclick="App.printPositions()">{{plannerCtrl.printAllTitle}}</button>
+                <button onclick="maps.Main.deleteMarkers()">{{plannerCtrl.deleteTitle}}</button>
+                <button onclick="maps.Main.printPositions()">{{plannerCtrl.printAllTitle}}</button>
             </div>
         `;
         public controller = "plannerCtrl";

@@ -19,7 +19,8 @@ var maps;
                 this.locations.bellvue = new google.maps.LatLng(47.366832, 8.545105);
             this.addMarkers();
             this.addPolyline();
-            this.MapManager.showDirections(this.locations.bellvue, this.locations.bahnhofstrasse);
+            this.overlay = maps.overlay.Factory.create();
+            this.overlay.setMap(map);
             this.DrawingTools = new maps.DrawingTools(map);
         };
         Main.addMarkers = function () {
@@ -30,14 +31,30 @@ var maps;
                 this.MarkerManager.addMarker(marker_1);
             }
         };
+        Main.addMarker = function (position) {
+            var marker = maps.marker.Factory.createMarker(position, "New Marker", true);
+            this.MarkerManager.addMarker(marker);
+            this.addPointToPolyline(position);
+        };
+        Main.getOverlay = function () {
+            return this.overlay;
+        };
         Main.addPolyline = function () {
             console.log("[App] addMarkers()");
-            var latLngs = [];
+            var latLngs = new google.maps.MVCArray();
             for (var location_2 in this.locations) {
                 var latLng = this.locations[location_2];
                 latLngs.push(latLng);
             }
-            var polyline = maps.polyline.Factory.createPolyline(latLngs);
+            this.polyline = maps.polyline.Factory.createPolyline(latLngs);
+            this.PolylineManager.addPolyline(this.polyline);
+        };
+        Main.addPointToPolyline = function (point) {
+            var path = this.polyline.getPath();
+            path.push(point);
+            this.polyline.setMap(null);
+            var polyline = maps.polyline.Factory.createPolyline(path);
+            this.polyline = polyline;
             this.PolylineManager.addPolyline(polyline);
         };
         Main.printPositions = function () {
@@ -51,3 +68,4 @@ var maps;
     })();
     maps.Main = Main;
 })(maps || (maps = {}));
+//# sourceMappingURL=googlemaps.js.map

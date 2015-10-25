@@ -6,6 +6,9 @@ namespace maps {
       private static locations: any;
       private static DrawingTools: maps.DrawingTools;
 
+      private static overlay: google.maps.OverlayView;
+      private static polyline: google.maps.Polyline;
+
       public static initialize() {
         console.log("[App] initialize()");
         let lat = 47.3720639;
@@ -26,7 +29,10 @@ namespace maps {
         // populate map
         this.addMarkers();
         this.addPolyline();
-        this.MapManager.showDirections(this.locations.bellvue, this.locations.bahnhofstrasse);
+
+        // overlay for drag and drop LatLng calculation
+        this.overlay = maps.overlay.Factory.create();
+        this.overlay.setMap(map);
 
         // add drawing tools
         this.DrawingTools = new maps.DrawingTools(map);
@@ -41,17 +47,36 @@ namespace maps {
         }
       }
 
+      public static addMarker(position: google.maps.LatLng) {
+          let marker: google.maps.Marker = maps.marker.Factory.createMarker(position, "New Marker", true);
+          this.MarkerManager.addMarker(marker);
+          this.addPointToPolyline(position);
+      }
+
+      public static getOverlay(): google.maps.OverlayView {
+          return this.overlay;
+      }
+
       private static addPolyline(): void {
         console.log("[App] addMarkers()");
-        let latLngs: google.maps.LatLng[] = [];
+        let latLngs: google.maps.MVCArray = new google.maps.MVCArray();
         for (let location in this.locations) {
           let latLng: google.maps.LatLng = this.locations[location];
           latLngs.push(latLng);
         }
-
-        let polyline: google.maps.Polyline = maps.polyline.Factory.createPolyline(latLngs);
-        this.PolylineManager.addPolyline(polyline);
+        this.polyline = maps.polyline.Factory.createPolyline(latLngs);
+        this.PolylineManager.addPolyline(this.polyline);
       }
+
+      private static addPointToPolyline(point: google.maps.LatLng) {
+          let path: google.maps.MVCArray = this.polyline.getPath();
+          path.push(point);
+          this.polyline.setMap(null);
+          let polyline: google.maps.Polyline = maps.polyline.Factory.createPolyline(path)
+          this.polyline = polyline;
+          this.PolylineManager.addPolyline(polyline);
+      }
+
 
       private static printPositions() {
         console.log("[App] printPositions()");

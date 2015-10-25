@@ -12,7 +12,8 @@ var maps;
                     position: position,
                     draggable: draggable,
                     animation: google.maps.Animation.DROP,
-                    title: title
+                    title: title,
+                    icon: "/resources/images/location.svg"
                 });
             };
             return Factory;
@@ -20,3 +21,4 @@ var maps;
         marker.Factory = Factory;
     })(marker = maps.marker || (maps.marker = {}));
 })(maps || (maps = {}));
+//# sourceMappingURL=factory.js.map

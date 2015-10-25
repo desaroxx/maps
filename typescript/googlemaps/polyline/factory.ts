@@ -1,6 +1,6 @@
 namespace maps.polyline {
     export class Factory {
-        public static createPolyline(positions: google.maps.LatLng[]): google.maps.Polyline {
+        public static createPolyline(positions: google.maps.MVCArray): google.maps.Polyline {
             return new google.maps.Polyline({
                 path: positions,
                 geodesic: true,

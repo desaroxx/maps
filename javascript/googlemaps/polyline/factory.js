@@ -19,3 +19,4 @@ var maps;
         polyline.Factory = Factory;
     })(polyline = maps.polyline || (maps.polyline = {}));
 })(maps || (maps = {}));
+//# sourceMappingURL=factory.js.map

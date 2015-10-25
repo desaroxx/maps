@@ -5,7 +5,8 @@ namespace maps.marker {
                 position: position,
                 draggable: draggable,
                 animation: google.maps.Animation.DROP,
-                title: title
+                title: title,
+                icon: "/resources/images/location.svg"
             });
         }
     }
