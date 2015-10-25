@@ -8,8 +8,15 @@
         "!./node_modules/**/*.ts"
     ],
     "files": [
-        "./typescript/MapManager.ts",
+        "./typescript/DrawingTools.ts",
+        "./typescript/PlaceFinder.ts",
         "./typescript/app.ts",
+        "./typescript/map/factory.ts",
+        "./typescript/map/manager.ts",
+        "./typescript/marker/factory.ts",
+        "./typescript/marker/manager.ts",
+        "./typescript/polyline/factory.ts",
+        "./typescript/polyline/manager.ts",
         "./typings/googlemaps/google.maps.d.ts",
         "./typings/tsd.d.ts",
         "./typings/underscore/underscore.d.ts"
