@@ -13,12 +13,11 @@
     "files": [
         "./bower_components/angular-ui-router/api/angular-ui-router.d.ts",
         "./typescript/app.ts",
-        "./typescript/googlemaps/DrawingTools.ts",
-        "./typescript/googlemaps/PlaceFinder.ts",
         "./typescript/googlemaps/googlemaps.ts",
         "./typescript/googlemaps/map/factory.ts",
         "./typescript/googlemaps/map/manager.ts",
         "./typescript/googlemaps/marker/factory.ts",
+        "./typescript/googlemaps/marker/listeners.ts",
         "./typescript/googlemaps/marker/manager.ts",
         "./typescript/googlemaps/overlay/factory.ts",
         "./typescript/googlemaps/polyline/factory.ts",

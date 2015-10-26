@@ -17,37 +17,37 @@ var maps;
                 this.locations.bahnhof = new google.maps.LatLng(47.377291, 8.540079),
                 this.locations.polybahn = new google.maps.LatLng(47.376437, 8.544033),
                 this.locations.bellvue = new google.maps.LatLng(47.366832, 8.545105);
+            this.polyline = maps.polyline.Factory.createPolyline(new google.maps.MVCArray());
             this.addMarkers();
-            this.addPolyline();
             this.overlay = maps.overlay.Factory.create();
             this.overlay.setMap(map);
-            this.DrawingTools = new maps.DrawingTools(map);
         };
         Main.addMarkers = function () {
             console.log("[App] addMarkers()");
             for (var location_1 in this.locations) {
                 var latLng = this.locations[location_1];
-                var marker_1 = maps.marker.Factory.createMarker(latLng, location_1, true);
-                this.MarkerManager.addMarker(marker_1);
+                this.addMarker(latLng);
             }
         };
         Main.addMarker = function (position) {
-            var marker = maps.marker.Factory.createMarker(position, "New Marker", true);
+            var marker = maps.marker.Factory.createMarker(position, this.polyline.getPath().getLength(), "New Marker", true);
             this.MarkerManager.addMarker(marker);
             this.addPointToPolyline(position);
+            google.maps.event.addListener(marker, "drag", this.handleMouseEvent);
+        };
+        Main.handleMouseEvent = function (event) {
+            var marker = this;
+            maps.Main.updatePolylinePoint(marker.polylineIndex, marker.getPosition());
+            event.latLng;
+            console.log("event:", event);
+        };
+        ;
+        Main.updatePolylinePoint = function (index, location) {
+            console.log("updatePolylinePoint()");
+            this.polyline.getPath().setAt(index, location);
         };
         Main.getOverlay = function () {
             return this.overlay;
-        };
-        Main.addPolyline = function () {
-            console.log("[App] addMarkers()");
-            var latLngs = new google.maps.MVCArray();
-            for (var location_2 in this.locations) {
-                var latLng = this.locations[location_2];
-                latLngs.push(latLng);
-            }
-            this.polyline = maps.polyline.Factory.createPolyline(latLngs);
-            this.PolylineManager.addPolyline(this.polyline);
         };
         Main.addPointToPolyline = function (point) {
             var path = this.polyline.getPath();
@@ -63,6 +63,10 @@ var maps;
         };
         Main.deleteMarkers = function () {
             this.MarkerManager.removeAllMarkers();
+            this.polyline.setMap(null);
+            var emptyMVCArray = new google.maps.MVCArray();
+            this.polyline = maps.polyline.Factory.createPolyline(emptyMVCArray);
+            this.polyline.setMap(this.MapManager.getMap());
         };
         return Main;
     })();

@@ -35,3 +35,4 @@ var maps;
         marker_1.Manager = Manager;
     })(marker = maps.marker || (maps.marker = {}));
 })(maps || (maps = {}));
+//# sourceMappingURL=manager.js.map

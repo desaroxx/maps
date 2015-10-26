@@ -1,7 +1,7 @@
 namespace maps.map {
     export class Factory {
         private static defaultMapSettings: google.maps.MapOptions = {
-            zoom: 10
+            zoom: 15
         };
 
         public static create(elementId: string, center: google.maps.LatLng, settings: google.maps.MapOptions = {}): google.maps.Map {

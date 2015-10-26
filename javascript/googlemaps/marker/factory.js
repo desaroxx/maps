@@ -5,16 +5,18 @@ var maps;
         var Factory = (function () {
             function Factory() {
             }
-            Factory.createMarker = function (position, title, draggable, delay) {
+            Factory.createMarker = function (position, polylineIndex, title, draggable, delay) {
                 if (draggable === void 0) { draggable = false; }
                 if (delay === void 0) { delay = 0; }
-                return new google.maps.Marker({
+                var extendedMarkerOptions = {
+                    polylineIndex: polylineIndex,
                     position: position,
                     draggable: draggable,
                     animation: google.maps.Animation.DROP,
                     title: title,
                     icon: "/resources/images/location.svg"
-                });
+                };
+                return new google.maps.Marker(extendedMarkerOptions);
             };
             return Factory;
         })();

@@ -17,10 +17,11 @@ var maps;
                 return new google.maps.Map(element, mapSettings);
             };
             Factory.defaultMapSettings = {
-                zoom: 10
+                zoom: 15
             };
             return Factory;
         })();
         map.Factory = Factory;
     })(map = maps.map || (maps.map = {}));
 })(maps || (maps = {}));
+//# sourceMappingURL=factory.js.map
