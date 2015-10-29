@@ -13,6 +13,7 @@
     "files": [
         "./bower_components/angular-ui-router/api/angular-ui-router.d.ts",
         "./typescript/app.ts",
+        "./typescript/collections/collections.ts",
         "./typescript/googlemaps/googlemaps.ts",
         "./typescript/googlemaps/map/factory.ts",
         "./typescript/googlemaps/map/manager.ts",
@@ -29,6 +30,8 @@
         "./typescript/planner/map/drawingTools/directive.ts",
         "./typescript/planner/map/drawingTools/tool/markerToolDirective.ts",
         "./typescript/planner/planner.ts",
+        "./typescript/trip/activities/activity.ts",
+        "./typescript/trip/trip.ts",
         "./typings/angular-ui-router/angular-ui-router.d.ts",
         "./typings/angularjs/angular.d.ts",
         "./typings/googlemaps/google.maps.d.ts",

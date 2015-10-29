@@ -11,7 +11,7 @@ var maps;
                     geodesic: true,
                     strokeColor: '#FF0000',
                     strokeOpacity: 1.0,
-                    strokeWeight: 2
+                    strokeWeight: 5
                 });
             };
             return Factory;
