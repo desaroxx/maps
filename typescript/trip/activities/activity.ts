@@ -1,31 +1,35 @@
-namespace activities.models {
+namespace activity {
 
     enum MoveType {
         POLYLINE,
         ROAD
     }
 
-    interface Duration {
-        start: Date,
-        end: Date
+    export interface IDuration {
+        start: moment.Moment,
+        end: moment.Moment
     }
 
-    export interface Activity {
+    export interface IActivity {
         icon: string;
         title: string;
-        duration?: Duration;
+        duration?: IDuration;
     }
 
-    interface PositinalActivity extends Activity {
-        location: google.maps.LatLng;
+    export interface IPositinalActivity extends IActivity {
+        position: google.maps.LatLng;
     }
 
-    export interface AreaActivity extends Activity {
+    export interface IIndividualActivity extends IActivity {
+    }
+
+    export interface IAreaActivity extends IActivity {
         area: google.maps.Polygon;
     }
 
-    export interface MoveActivity extends Activity {
+    export interface IMoveActivity extends IActivity {
         waypoints: google.maps.MVCArray;
         type: MoveType;
     }
+
 }
