@@ -12,13 +12,10 @@
       "commit": "32029fcb4e1a3ef8968711b545d77b584435729d"
     },
     "angularjs/angular.d.ts": {
-      "commit": "3191f6e0088eee07c4d8fd24e4d27a40a60d9eb9"
+      "commit": "eb59a40d3c2f3257e34ec2ede181046230814a41"
     },
     "jquery/jquery.d.ts": {
-      "commit": "3191f6e0088eee07c4d8fd24e4d27a40a60d9eb9"
-    },
-    "angular-ui-router/angular-ui-router.d.ts": {
-      "commit": "3191f6e0088eee07c4d8fd24e4d27a40a60d9eb9"
+      "commit": "eb59a40d3c2f3257e34ec2ede181046230814a41"
     },
     "jqueryui/jqueryui.d.ts": {
       "commit": "3191f6e0088eee07c4d8fd24e4d27a40a60d9eb9"
@@ -28,6 +25,9 @@
     },
     "moment/moment-node.d.ts": {
       "commit": "62eedc3121a5e28c50473d2e4a9cefbcb9c3957f"
+    },
+    "angular-ui-router/angular-ui-router.d.ts": {
+      "commit": "eb59a40d3c2f3257e34ec2ede181046230814a41"
     }
   }
 }

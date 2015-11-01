@@ -6,7 +6,14 @@
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
     "typescript-watch": "./node_modules/typescript/bin/tsc -p src -w",
     "typescript-build": "./node_modules/typescript/bin/tsc -p src",
-    "tsd-install": "./node_modules/tsd/build/cli.js install"
+    "copy-files": "./node_modules/gulp/bin/gulp.js copy-files",
+    "tsd-install": "./node_modules/tsd/build/cli.js install",
+    "bower-install": "./node_modules/bower/bin/bower install",
+
+    "install-packages": "npm run bower-install && npm run tsd-install",
+    "compile": "npm run copy-files && npm run typescript-build",
+
+    "build-app": "npm run install-packages && npm run compile"
   },
   "repository": {
     "type": "git",
@@ -25,6 +32,7 @@
     "phantomjs": "^1.9.18"
   },
   "dependencies": {
+    "bower": "^1.6.5",
     "gulp": "^3.9.0",
     "tsd": "^0.6.5",
     "typescript": "^1.6.2"
