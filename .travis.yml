@@ -5,6 +5,6 @@ install:
   - npm install
   - npm run bower-install
   - npm run tsd-install
-build:
+script:
   - npm run copy-files
   - npm run typescript-build
