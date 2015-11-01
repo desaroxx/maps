@@ -8,3 +8,4 @@ install:
 script:
   - npm run copy-files
   - npm run typescript-build
+  - npm test
