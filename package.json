@@ -2,24 +2,11 @@
   "name": "maps",
   "version": "1.0.0",
   "description": "",
-  "scripts": {
-    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
-    "typescript-watch": "./node_modules/typescript/bin/tsc -p src -w",
-    "typescript-build": "./node_modules/typescript/bin/tsc -p src",
-    "copy-files": "./node_modules/gulp/bin/gulp.js copy-files",
-    "tsd-install": "./node_modules/tsd/build/cli.js install",
-    "bower-install": "./node_modules/bower/bin/bower install",
-
-    "install-packages": "npm run bower-install && npm run tsd-install",
-    "compile": "npm run copy-files && npm run typescript-build",
-
-    "build-app": "npm run install-packages && npm run compile"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/desaroxx/maps.git"
   },
-  "author": "",
+  "author": "Ken Steiner <kenosteiner@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/desaroxx/maps/issues"
@@ -36,5 +23,21 @@
     "gulp": "^3.9.0",
     "tsd": "^0.6.5",
     "typescript": "^1.6.2"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
+    "typescript-watch": "./node_modules/typescript/bin/tsc -p src -w",
+    "typescript-build": "./node_modules/typescript/bin/tsc -p src",
+    "copy-files": "./node_modules/gulp/bin/gulp.js copy-files",
+    "gulp-watch": "./node_modules/gulp/bin/gulp.js watch",
+    "tsd-install": "./node_modules/tsd/build/cli.js install",
+    "bower-install": "./node_modules/bower/bin/bower install",
+
+    "install-packages": "npm run bower-install && npm run tsd-install",
+    "compile": "npm run copy-files && npm run typescript-build",
+    "watch": "npm run typescript-watch & npm run gulp-watch",
+    "develop": "npm run compile && gulp",
+
+    "build-app": "npm run install-packages && npm run compile"
   }
 }

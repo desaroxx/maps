@@ -1,6 +1,6 @@
 namespace activity {
 
-    enum MoveType {
+    export enum MoveType {
         POLYLINE,
         ROAD
     }

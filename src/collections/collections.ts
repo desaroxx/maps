@@ -2549,7 +2549,7 @@ module collections {
         private searchNode(node: BSTreeNode<T>, element: T): BSTreeNode<T> {
             var cmp:number = null;
             while (node !== null && cmp !== 0) {
-                cmp = this.compare(element, node.element);
+                cmp = <number> this.compare(element, node.element);
                 if (cmp < 0) {
                     node = node.leftCh;
                 } else if (cmp > 0) {
@@ -2710,7 +2710,7 @@ module collections {
             var position = this.root;
             var cmp:number = null;
             while (position !== null) {
-                cmp = this.compare(node.element, position.element);
+                cmp = <number>this.compare(node.element, position.element);
                 if (cmp === 0) {
                     return null;
                 } else if (cmp < 0) {

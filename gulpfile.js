@@ -15,4 +15,4 @@ gulp.task("copy-files:watch", function() {
 
 gulp.task("build", ["copy-html"]);
 
-gulp.task("watch", ["copy-html:watch"]);
+gulp.task("watch", ["copy-files:watch"]);
