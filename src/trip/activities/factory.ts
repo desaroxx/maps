@@ -29,7 +29,7 @@ namespace activity {
             return <IIndividualActivity> activity;
         }
 
-        public static positionalActivity(
+        /*public static positionalActivity(
             position: google.maps.LatLng,
             icon: string,
             title?: string,
@@ -42,9 +42,9 @@ namespace activity {
                 duration
             );
             return this.activityToPositionalActivity(activity, position);
-        }
+        }*/
 
-        private static activityToPositionalActivity(
+        /*private static activityToPositionalActivity(
             activity: IActivity,
             position: google.maps.LatLng
         ): IPositinalActivity {
@@ -69,6 +69,6 @@ namespace activity {
                 duration
             );
             return this.activityToPositionalActivity(activity, position);
-        }
+        }*/
     }
 }

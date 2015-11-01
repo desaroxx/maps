@@ -2,9 +2,11 @@
   "name": "maps",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS"
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
+    "typescript-watch": "./node_modules/typescript/bin/tsc -p src -w",
+    "typescript-build": "./node_modules/typescript/bin/tsc -p src",
+    "tsd-install": "./node_modules/tsd/build/cli.js install"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,8 @@
     "phantomjs": "^1.9.18"
   },
   "dependencies": {
-    "gulp": "^3.9.0"
+    "gulp": "^3.9.0",
+    "tsd": "^0.6.5",
+    "typescript": "^1.6.2"
   }
 }
