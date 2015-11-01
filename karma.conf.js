@@ -15,7 +15,29 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        "./tests/**/*.js"
+      "./compiled/bower_components/jquery/dist/jquery.min.js",
+      "./compiled/bower_components/jquery-ui/jquery-ui.min.js",
+      "./compiled/bower_components/underscore/underscore-min.js",
+      "./compiled/bower_components/angular/angular.min.js",
+      "./compiled/bower_components/angular-ui-router/release/angular-ui-router.min.js",
+
+      "./compiled/planner/planner.js",
+      "./compiled/planner/directive.js",
+      "./compiled/planner/controller.js",
+      "./compiled/planner/map/directive.js",
+      "./compiled/planner/map/controller.js",
+      "./compiled/planner/map/drawingTools/directive.js",
+      "./compiled/planner/map/drawingTools/tool/markerToolDirective.js",
+      "./compiled/googlemaps/googlemaps.js",
+      "./compiled/googlemaps/map/factory.js",
+      "./compiled/googlemaps/map/manager.js",
+      "./compiled/googlemaps/marker/factory.js",
+      "./compiled/googlemaps/marker/manager.js",
+      "./compiled/googlemaps/polyline/factory.js",
+      "./compiled/googlemaps/polyline/manager.js",
+      "./compiled/googlemaps/overlay/factory.js",
+      "./compiled/app.js",
+      "./compiled/**/*.spec.js"
     ],
 
 
