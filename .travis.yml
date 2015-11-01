@@ -1,9 +1,10 @@
 language: node_js
 node_js:
-  - 4.0
+  - 0.12.7
 install:
   - npm install
   - npm run bower-install
   - npm run tsd-install
 build:
-  - npm run copy-files && npm run typescript-build
+  - npm run copy-files
+  - npm run typescript-build
