@@ -8,7 +8,7 @@ namespace trip {
 
         constructor(activityArray: Array<activity.IActivity> = []) {
             this.activities = new collections.LinkedList<IActivity>();
-            activityArray.forEach((activity: IActivity): void => this.add(activity));
+            activityArray.forEach((activity: IActivity) => this.add(activity));
         }
 
         public add(activity: IActivity, index: number = undefined): boolean {
