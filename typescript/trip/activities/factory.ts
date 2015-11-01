@@ -1,5 +1,7 @@
 namespace activity {
+
     export class Factory {
+
         private static activity(
             icon?: string,
             title?: string,

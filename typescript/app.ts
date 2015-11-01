@@ -1,4 +1,5 @@
 namespace app {
+
     class Bootstrap {
         public static config($urlRouterProvider: angular.ui.IUrlRouterProvider, $stateProvider: ng.ui.IStateProvider) {
             console.log("[app.Bootstrap] config()");
