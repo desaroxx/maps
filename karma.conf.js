@@ -10,7 +10,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ["chai", "mocha"],
 
 
     // list of files / patterns to load in the browser
@@ -36,6 +36,11 @@ module.exports = function(config) {
       "./compiled/googlemaps/polyline/factory.js",
       "./compiled/googlemaps/polyline/manager.js",
       "./compiled/googlemaps/overlay/factory.js",
+      "./compiled/trip/activity/caster.js",
+      "./compiled/trip/activity/factory.js",
+      "./compiled/trip/activity/model.js",
+      "./compiled/trip/trip.js",
+      "./compiled/trip/model.js",
       "./compiled/app.js",
       "./compiled/**/*.spec.js"
     ],

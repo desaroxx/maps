@@ -2,7 +2,7 @@ namespace activity {
 
     export class Factory {
 
-        private static activity(
+        public static activity(
             icon: string = "./resources/icons/activity.svg",
             title: string = "",
             duration: IDuration = { start: null, end: null}
@@ -15,7 +15,7 @@ namespace activity {
         }
 
         public static individualActivity(
-            icon: string = "./resources/icons/personal.svg",
+            icon: string = "./resources/icons/personal-activity.svg",
             title: string = "",
             duration: IDuration = { start: null, end: null}
         ): IIndividualActivity {
