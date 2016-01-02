@@ -1,0 +1,13 @@
+<div class="pane">
+    <div class="container" ng-model="paneCtrl.activities">
+        <div ng-repeat="activity in paneCtrl.activities" class="item" id="{{city}}">
+            <div class="dragme">
+                <i class="material-icons">reorder</i>
+            </div>
+            <div class="item-content">
+                <span class="action-type">{{activity.action_type}}</span>
+                <span class="title" ng-click="paneCtrl.openDialog(activity)">{{activity.name}}</span>
+            </div>
+        </div>
+    </div>
+</div>

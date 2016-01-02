@@ -9,12 +9,12 @@ namespace maps {
       private static polyline: google.maps.Polyline;
 
       public static initialize() {
-        console.log("[App] initialize()");
+        console.log('[App] initialize()');
         let lat = 47.3720639;
         let lng = 8.5380668;
         let center = new google.maps.LatLng(lat, lng);
 
-        let map: google.maps.Map = maps.map.Factory.create("planner-map", center, {});
+        let map: google.maps.Map = maps.map.Factory.create('planner-map', center, {});
         this.MapManager = new maps.map.Manager(map);
         this.MarkerManager = new maps.marker.Manager(map);
         this.PolylineManager = new maps.polyline.Manager(map);
@@ -37,31 +37,33 @@ namespace maps {
       }
 
       private static addMarkers(): void {
-        console.log("[App] addMarkers()");
+        console.log('[App] addMarkers()');
         for (let location in this.locations) {
-          let latLng: google.maps.LatLng = this.locations[location];
-          this.addMarker(latLng);
+          if (this.locations.hasOwnProperty(location)) {
+              let latLng: google.maps.LatLng = this.locations[location];
+              this.addMarker(latLng);
+          }
         }
       }
 
       public static addMarker(position: google.maps.LatLng) {
-          let marker: google.maps.Marker = maps.marker.Factory.createMarker(position, this.polyline.getPath().getLength(), "New Marker", true);
+          let marker: google.maps.Marker = maps.marker.Factory.createMarker(position, this.polyline.getPath().getLength(), 'New Marker', true);
           this.MarkerManager.addMarker(marker);
           this.addPointToPolyline(position);
 
           // attach listener
-          google.maps.event.addListener(marker, "drag", this.handleMouseEvent);
+          google.maps.event.addListener(marker, 'drag', this.handleMouseEvent);
       }
 
       public static handleMouseEvent(event: google.maps.MouseEvent) {
           let marker: any = this;
           maps.Main.updatePolylinePoint(marker.polylineIndex, marker.getPosition());
           event.latLng;
-          console.log("event:", event);
+          console.log('event:', event);
       };
 
       public static updatePolylinePoint(index: number, location: google.maps.LatLng) {
-          console.log("updatePolylinePoint()");
+          console.log('updatePolylinePoint()');
           this.polyline.getPath().setAt(index, location);
       }
 
@@ -76,16 +78,16 @@ namespace maps {
           let polyline: google.maps.Polyline = maps.polyline.Factory.createPolyline(path)
           this.polyline = polyline;
           this.PolylineManager.addPolyline(polyline);
-          google.maps.event.addListener(polyline, "mouseover", (event: google.maps.MouseEvent) => {
+          google.maps.event.addListener(polyline, 'mouseover', (event: google.maps.MouseEvent) => {
               let position: google.maps.LatLng = event.latLng;
               let marker: google.maps.Marker = maps.marker.Factory.createPolylineHoverMarker(position);
               let map = this.MapManager.getMap()
               marker.setMap(map);
 
-              let mouseMoveListener = google.maps.event.addListener(polyline, "mousemove", (event: google.maps.MouseEvent) => {
+              let mouseMoveListener = google.maps.event.addListener(polyline, 'mousemove', (event: google.maps.MouseEvent) => {
                   marker.setPosition(event.latLng);
               });
-              let mouseOutLisener = google.maps.event.addListener(polyline, "mouseout", (event: google.maps.MouseEvent) => {
+              let mouseOutLisener = google.maps.event.addListener(polyline, 'mouseout', (event: google.maps.MouseEvent) => {
                   marker.setMap(null);
                   // remove listeners
                   google.maps.event.removeListener(mouseMoveListener);
@@ -96,7 +98,7 @@ namespace maps {
       }
 
       private static printPositions() {
-        console.log("[App] printPositions()");
+        console.log('[App] printPositions()');
         this.MarkerManager.printPositions();
       }
 

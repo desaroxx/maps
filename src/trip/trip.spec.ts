@@ -1,7 +1,7 @@
 namespace trip.spec {
-    describe("Trip", () => {
+    describe('Trip', () => {
 
-        it("should return true", () => {
+        it('should return true', () => {
             chai.expect(true).to.equal(true);
         });
 

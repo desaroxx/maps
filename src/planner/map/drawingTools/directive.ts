@@ -13,11 +13,11 @@ namespace planner.tools {
                 	z-index: 1000;
                 }
             </style>
-            <div class="drawing-tools">
+            <div class='drawing-tools'>
                 <marker-tool></marker-tool>
             </div>
         `;
     }
 
-    angular.module("planner").directive("drawingTools", () => new DrawingToolsDirective());
+    angular.module('planner').directive('drawingTools', () => new DrawingToolsDirective());
 }

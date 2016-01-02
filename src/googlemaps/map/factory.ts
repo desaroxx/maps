@@ -5,7 +5,6 @@ namespace maps.map {
         };
 
         public static create(elementId: string, center: google.maps.LatLng, settings: google.maps.MapOptions = {}): google.maps.Map {
-            console.log("[MapManager] createMap(...)");
             let mapSettings: google.maps.MapOptions = _.clone(this.defaultMapSettings);
             mapSettings.center = center;
             // add all settings from parameter to mapSettings

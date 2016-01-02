@@ -14,12 +14,12 @@ namespace planner.tools.tool {
                     width: 40px;
                 }
             </style>
-            <div class="marker-tool">
-                <img id="draggable" src="/resources/images/location.svg">
+            <div class='marker-tool'>
+                <img id='draggable' src='/resources/images/location.svg'>
             </div>
         `;
         public link = () => {
-            let draggable: JQuery = $("#draggable");
+            let draggable: JQuery = $('#draggable');
             draggable.draggable({helper: 'clone',
                 stop: function(event: JQueryEventObject) {
                         let point = new google.maps.Point(event.pageX, event.pageY);
@@ -30,5 +30,5 @@ namespace planner.tools.tool {
         };
     }
 
-    angular.module("planner").directive("markerTool", () => new MarkerToolDirective());
+    angular.module('planner').directive('markerTool', () => new MarkerToolDirective());
 }

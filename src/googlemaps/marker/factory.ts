@@ -11,7 +11,7 @@ namespace maps.marker {
                 draggable: draggable,
                 animation: google.maps.Animation.DROP,
                 title: title,
-                icon: "/resources/images/location.svg"
+                icon: '/resources/images/location.svg'
             };
             return new google.maps.Marker(extendedMarkerOptions);
         }

@@ -1,0 +1,60 @@
+.container {
+    top: 16px;
+    left: 32px;
+    border-radius: 10px;
+    background-color: white; }
+
+.item {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    height: 100px;
+    background-color: white;
+    border-bottom: 1px solid #e6e6e6; }
+.item .dragme {
+    height: 40px;
+    width: 40px;
+    cursor: ns-resize;
+    text-align: center; }
+.item .dragme i {
+    line-height: 40px;
+    opacity: 0.6; }
+.item .item-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column; }
+.item .item-content .action-type {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    color: #969696; }
+.item .content {
+    padding: 0 10px;
+    line-height: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: Arial; }
+.item .textinput {
+    width: 270px;
+    border: 0;
+    outline: none;
+    border-bottom: 1px solid white; }
+.item .textinput:focus {
+    border-bottom: 1px solid blue; }
+.item .title {
+    margin-top: 5px;
+    outline: none; }
+.item .title:hover {
+    cursor: pointer; }
+
+/**************************/
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100%; }
+
+.map {
+    height: 100%;
+    width: 100%;
+    background-color: #f1f1f1; }

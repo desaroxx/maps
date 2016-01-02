@@ -1,3 +1,3 @@
 namespace planner {
-    angular.module("planner", []);
+    angular.module('planner', []);
 }

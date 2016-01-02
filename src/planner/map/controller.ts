@@ -3,5 +3,5 @@ namespace planner {
         constructor() {}
     }
 
-    angular.module("planner").controller("plannerMapCtrl", PlannerMapController);
+    angular.module('planner').controller('plannerMapCtrl', PlannerMapController);
 }

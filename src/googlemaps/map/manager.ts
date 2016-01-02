@@ -4,21 +4,21 @@ namespace maps.map {
         }
 
         public showDirections(originLatLng: google.maps.LatLng, destinationLatLng: google.maps.LatLng) {
-            // Create directions display
+            // create directions display
             let directionsDisplay: google.maps.DirectionsRenderer = new google.maps.DirectionsRenderer();
             directionsDisplay.setMap(this.map);
 
-            // Prepare request
+            // prepare request
             let request = {
                 origin: originLatLng,
                 destination: destinationLatLng,
-                // Note that Javascript allows us to access the constant
+                // note that Javascript allows us to access the constant
                 // using square brackets and a string value as its
-                // "property."
+                // property.
                 travelMode: google.maps.TravelMode["DRIVING"]
             };
 
-            // Execute request
+            // execute request
             new google.maps.DirectionsService().route(request, function(response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
                     directionsDisplay.setDirections(response);

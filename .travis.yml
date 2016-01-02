@@ -1,11 +1,6 @@
 language: node_js
-node_js:
-  - 4.1.2
 install:
   - npm install
-  - npm run bower-install
-  - npm run tsd-install
+  - npm run build-app
 script:
-  - npm run copy-files
-  - npm run typescript-build
   - npm test
